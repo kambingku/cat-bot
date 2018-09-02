@@ -8,12 +8,12 @@ function cat($token, $jumlah, $wait){
 		$body = 'token='.$token.'';
 				
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL,"http://anggaid.000webhostapp.com/api.php");
+        curl_setopt($ch, CURLOPT_URL,"https://api-siptruk.c9users.io/api.php");
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-	curl_setopt($ch, CURLOPT_HTTPHEADER, array("User-Agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36"));
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array("Host: api-siptruk.c9users.io","User-Agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36"));
         $server_output = curl_exec ($ch);
         curl_close ($ch);
 	echo $server_output."\n";
